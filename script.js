@@ -1,3 +1,6 @@
+audio=new Audio('oh.mp3');
+
+
 // Define HTML elements
 const board = document.getElementById('game-board');
 const instructionText = document.getElementById('instruction-text');
@@ -162,6 +165,9 @@ function checkCollision() {
   const head = snake[0];
 
   if (head.x < 1 || head.x > gridSize || head.y < 1 || head.y > gridSize) {
+    setTimeout(() =>{
+      audio.play();  
+    }, 1);
     resetGame();
   }
 
